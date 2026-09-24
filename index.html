@@ -18,7 +18,7 @@
   <meta property="og:image:alt" content="FACE marking cups across nominal, wrinkled, taped, plastic, and wet surfaces">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="static/images/face-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="static/css/face.css?v=vector-symbols">
+  <link rel="stylesheet" href="static/css/face.css?v=text-labels">
   <script src="static/js/face.js" defer></script>
   <script src="static/js/method-gifs.js" defer></script>
 </head>
@@ -59,9 +59,9 @@
     <section class="section" id="idea" aria-labelledby="idea-title"><div class="wrap">
       <p class="eyebrow">The key idea</p><h2 id="idea-title">Learn the task.<br>Factor out the contact conditions.</h2><p class="standfirst">The same mark can require a different force on a wet surface or a different direction on a curved object. FACE separates these contact-dependent quantities from the behavior the policy learns.</p>
       <div class="factor-grid">
-        <article class="factor"><span class="factor-number">01 / BEHAVIOR</span><h3>What stays the same</h3><p>The intended motion and normalized interaction. The visuomotor policy stays fixed at deployment.</p><div class="factor-symbol" aria-hidden="true"><img src="static/images/symbol-policy.svg" width="44" height="48" alt=""><span>fixed policy</span></div></article>
-        <article class="factor"><span class="factor-number">02 / DIRECTION</span><h3>Where to apply force</h3><p>A learned contact-normal estimator tracks local surface orientation from motion and wrench histories.</p><div class="factor-symbol" aria-hidden="true"><img src="static/images/symbol-normal.svg" width="44" height="48" alt=""><span>contact normal</span></div></article>
-        <article class="factor"><span class="factor-number">03 / SCALE</span><h3>How force should scale</h3><p>An online friction estimator adjusts the tangential force scale to the current contact conditions.</p><div class="factor-symbol" aria-hidden="true"><img src="static/images/symbol-friction.svg" width="44" height="48" alt=""><span>friction scale</span></div></article>
+        <article class="factor"><span class="factor-number">01 / BEHAVIOR</span><h3>What stays the same</h3><p>The intended motion and normalized interaction. The visuomotor policy stays fixed at deployment.</p><div class="factor-label">Fixed policy</div></article>
+        <article class="factor"><span class="factor-number">02 / DIRECTION</span><h3>Where to apply force</h3><p>A learned contact-normal estimator tracks local surface orientation from motion and wrench histories.</p><div class="factor-label">Contact normal</div></article>
+        <article class="factor"><span class="factor-number">03 / SCALE</span><h3>How force should scale</h3><p>An online friction estimator adjusts the tangential force scale to the current contact conditions.</p><div class="factor-label">Friction scale</div></article>
       </div>
     </div></section>
 
