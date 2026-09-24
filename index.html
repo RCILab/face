@@ -20,6 +20,7 @@
   <link rel="icon" href="static/images/face-icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="static/css/face.css">
   <script src="static/js/face.js" defer></script>
+  <script src="static/js/method-demo.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -66,6 +67,38 @@
 
     <section class="section band" id="method" aria-labelledby="method-title"><div class="wrap">
       <p class="eyebrow">Method</p><h2 id="method-title">Normalize for learning.<br>Adapt for execution.</h2><p class="standfirst">Contact factors are used on both sides of the policy: to encode measured forces and to decode actions into physical commands.</p>
+      <figure class="method-demo" id="method-demo" aria-labelledby="demo-title">
+        <div class="demo-heading"><div><p class="eyebrow">A closer look at the decoder</p><h3 id="demo-title">Same action. Different physical interaction.</h3></div><button class="button button-small" id="demo-toggle" type="button" hidden>Pause animation</button></div>
+        <div class="demo-controls" aria-label="Illustrated contact condition" hidden>
+          <button type="button" data-condition="0" aria-pressed="true">01 <span>Lower friction</span></button>
+          <button type="button" data-condition="1" aria-pressed="false">02 <span>Higher friction</span></button>
+          <button type="button" data-condition="2" aria-pressed="false">03 <span>Tilted surface</span></button>
+        </div>
+        <div class="demo-grid">
+          <div class="demo-policy">
+            <p class="demo-label">Policy action <span>held fixed</span></p>
+            <div class="demo-action"><div><span>Normalized normal loading</span><strong>0.4</strong></div><div><span>Log tangential residual <i>c</i></span><strong>0.0</strong></div><div><span>Predicted translation Δx</span><strong aria-label="rightward">→</strong></div></div>
+            <div class="demo-decoder"><span class="demo-label">Contact-aware decoding</span><p><i>f</i><sub>tan</sub> = <span class="demo-mu">μ̂</span> · <i>f</i><sub>nor</sub> · exp(<i>c</i>)</p><p>Δx<sub>tan</sub> = (I − n̂n̂<sup>T</sup>) Δx</p><span class="demo-decoder-note">Restore force scale. Resolve contact direction.</span></div>
+          </div>
+          <div class="demo-world">
+            <div class="demo-readouts"><div><span>Estimated friction μ̂</span><strong id="demo-friction">0.35</strong></div><div><span>Normal force</span><strong>4.0 <small>N</small></strong></div><div><span>Tangential force</span><strong id="demo-force">1.4 <small>N</small></strong></div></div>
+            <svg class="demo-scene" viewBox="0 0 520 270" role="img" aria-labelledby="demo-svg-title demo-svg-desc">
+              <title id="demo-svg-title">Contact-aware execution</title><desc id="demo-svg-desc">A fixed motion command is projected onto the local surface. The decoded force combines constant normal loading with a friction-scaled tangential component. Arrows update as the contact conditions change.</desc>
+              <defs><marker id="demo-arrow-motion" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#356e52"/></marker><marker id="demo-arrow-normal" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#527ca1"/></marker><marker id="demo-arrow-force" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#bb672b"/></marker></defs>
+              <g id="demo-surface" transform="translate(230 112) rotate(0)"><path d="M-200 0H240V150H-200Z" fill="#e7ece2"/><path d="M-200 0H240" stroke="#a3b39c" stroke-width="2"/><path d="M-165 20l-12 12m62-12-12 12m62-12-12 12m62-12-12 12m62-12-12 12m62-12-12 12m62-12-12 12m62-12-12 12" stroke="#c4cebd" stroke-width="2"/></g>
+              <path d="M230 105V43m-7 11 7-11 7 11" stroke="#b2beb5" stroke-width="1.5" fill="none"/><text x="230" y="30" text-anchor="middle" fill="#758077" font-size="11">contact point</text>
+              <path id="demo-raw-motion" d="M230 112H375" stroke="#87958b" stroke-width="2" stroke-dasharray="5 5" fill="none"/>
+              <path id="demo-normal" d="M230 112L230 202" stroke="#527ca1" stroke-width="2.5" marker-end="url(#demo-arrow-normal)" fill="none"/>
+              <path id="demo-motion" d="M230 112L375 112" stroke="#356e52" stroke-width="3.5" marker-end="url(#demo-arrow-motion)" fill="none"/>
+              <path id="demo-force-vector" d="M230 112L255.2 184" stroke="#bb672b" stroke-width="3.5" marker-end="url(#demo-arrow-force)" fill="none"/>
+              <circle cx="230" cy="112" r="6" fill="#fff" stroke="#192d2a" stroke-width="2"/>
+            </svg>
+            <ul class="demo-legend"><li><span class="legend-line motion-line"></span>Adapted motion</li><li><span class="legend-line normal-line"></span>Contact normal</li><li><span class="legend-line force-line"></span>Decoded force</li><li><span class="legend-line raw-line"></span>Predicted motion</li></ul>
+          </div>
+        </div>
+        <div class="demo-explanation"><span id="demo-step">01 / LOWER FRICTION</span><p id="demo-explanation">Lower friction requires less tangential force for the same normalized interaction.</p></div>
+        <figcaption>Conceptual illustration of Eqs. (6)–(7), not experimental data. One action is held fixed to isolate decoding: normal-force limit 10 N, residual exp(c) = 1, and full contact (g = 1). During execution, the policy continues predicting actions with unchanged parameters.</figcaption>
+      </figure>
       <figure class="paper-figure"><a href="static/images/architecture.png" target="_blank" rel="noopener" aria-label="Open full-resolution FACE architecture"><img src="static/images/architecture.png" width="1368" height="531" loading="lazy" alt="FACE architecture: image, pose, and encoded wrench feed a normalized interaction policy; contact estimates inform the encoder and decoder; decoded pose and force references feed a compliance controller."></a><figcaption>Figure 2 from the paper. Online contact estimates restore the force scale and direction needed for execution.</figcaption></figure>
       <div class="steps"><article><span>01</span><h3>Encode the interaction</h3><p>Represent normal loading relative to operating bounds and tangential loading relative to friction-scaled normal force.</p></article><article><span>02</span><h3>Predict in normalized coordinates</h3><p>A visuomotor policy predicts relative pose and normalized force actions learned from nominal demonstrations.</p></article><article><span>03</span><h3>Reparameterize online</h3><p>Decode with the latest contact normal and friction estimate, then execute with hybrid position–force control.</p></article></div>
     </div></section>

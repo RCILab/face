@@ -11,6 +11,7 @@ A static HTML/CSS/JavaScript site, with no build step, CDN, analytics, or runtim
 - `index.html`: paper text, figures, experiments, and quantitative results.
 - `static/css/face.css`: responsive layout and visual design.
 - `static/js/face.js`: preview playback, video chapter links, and citation copy.
+- `static/js/method-demo.js`: lightweight SVG decoder animation. Three selectable contact conditions illustrate Eqs. (6)-(7) with a fixed action; illustrative values are not experimental measurements. The loop pauses offscreen, supports manual pause/selection, and starts paused with reduced motion enabled.
 - `MEDIA_TODO.md`: individual clip placeholders, source references, and replacement instructions (Korean).
 - `static/pdfs/face-paper.pdf`: the supplied anonymous manuscript.
 - `static/videos/face-final.mp4`: the final video with its original streams, remuxed for progressive playback.

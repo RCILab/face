@@ -74,6 +74,24 @@ try:
         page.locator('#hero-video').evaluate('(v) => v.currentTime = 5')
         page.screenshot(path=str(artifacts / 'desktop-hero.png'))
         page.locator('#method').screenshot(path=str(artifacts / 'desktop-method.png'))
+        # Decoder illustration follows Eqs. (6)-(7), not a prerecorded visual.
+        page.locator('#method-demo').scroll_into_view_if_needed()
+        assert page.locator('#demo-toggle').inner_text() == 'Play animation'
+        page.locator('[data-condition="1"]').click()
+        assert page.locator('#demo-friction').inner_text() == '0.85'
+        assert page.locator('#demo-force').inner_text() == '3.4 N'
+        flat_motion = page.locator('#demo-motion').get_attribute('d')
+        page.locator('[data-condition="2"]').click()
+        assert page.locator('#demo-force').inner_text() == '3.4 N'
+        assert page.locator('#demo-motion').get_attribute('d') != flat_motion
+        assert 'rotate(-24.00)' in page.locator('#demo-surface').get_attribute('transform')
+        page.locator('#method-demo').screenshot(path=str(artifacts / 'method-animation-desktop.png'))
+        page.locator('#demo-toggle').click()
+        page.wait_for_function("document.querySelector('[data-condition=\"0\"]').getAttribute('aria-pressed') === 'true'", timeout=9000)
+        page.locator('#demo-toggle').click()
+        stopped = page.locator('#demo-surface').get_attribute('transform')
+        page.wait_for_timeout(300)
+        assert page.locator('#demo-surface').get_attribute('transform') == stopped
         page.locator('[data-video-time="84"]').click()
         page.wait_for_function("document.querySelector('#main-video').currentTime >= 84 && !document.querySelector('#main-video').paused")
         duration = page.locator('#main-video').evaluate('(v) => v.duration')
@@ -91,6 +109,8 @@ try:
             assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth'), f'Overflow at {width}px'
             if width in (1440, 390):
                 page.screenshot(path=str(artifacts / f'page-{width}.png'), full_page=True)
+            if width == 390:
+                page.locator('#method-demo').screenshot(path=str(artifacts / 'method-animation-mobile.png'))
         # Ensure every image has loaded, including the lazily loaded detail figures.
         page.locator('summary').click()
         page.locator('details').scroll_into_view_if_needed()
@@ -102,6 +122,8 @@ try:
         assert plain.locator('#main-video').get_attribute('controls') is not None
         assert plain.locator('[data-video-time="84"]').get_attribute('href').endswith('#t=84')
         assert plain.locator('#copy-citation').is_hidden()
+        assert plain.locator('#demo-toggle').is_hidden()
+        assert plain.locator('.demo-scene').is_visible()
         browser.close()
     print(json.dumps({'status':'passed', 'widths':[1440,768,390,320], 'video_duration':duration, 'javascript_errors':errors, 'checks':['local assets and anchors','video playback and seek','reduced motion','pause/resume','clipboard','details','no JavaScript fallback'], 'screenshots':str(artifacts)}, indent=2))
 finally:
