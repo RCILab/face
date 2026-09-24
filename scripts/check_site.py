@@ -91,8 +91,19 @@ try:
         page.locator('#method-loops-toggle').click()
         assert page.locator('#method-loops img').evaluate_all('(images) => images.every(i => i.src.endsWith(".gif"))')
         page.locator('#method-loops').screenshot(path=str(artifacts / 'method-loops-desktop.png'))
-        page.locator('[data-video-time="84"]').click()
-        page.wait_for_function("document.querySelector('#main-video').currentTime >= 84 && !document.querySelector('#main-video').paused")
+        page.locator('#experiments').scroll_into_view_if_needed()
+        assert page.locator('#experiments .slot-label, #experiments [data-video-time]').count() == 0
+        for slot, expected in [('cup', 12.2), ('egg', 16.7)]:
+            clip = page.locator(f'[data-media-slot="{slot}"] video')
+            clip.scroll_into_view_if_needed()
+            clip.evaluate('(v) => v.play()')
+            page.wait_for_function('(s) => document.querySelector(s).currentTime > 0', arg=f'[data-media-slot="{slot}"] video')
+            assert abs(clip.evaluate('(v) => v.duration') - expected) < 0.05
+            assert clip.evaluate('(v) => v.muted && v.loop && v.controls')
+            clip.evaluate('(v) => { v.pause(); v.currentTime = v.duration - 0.5; }')
+        page.locator('#experiments').screenshot(path=str(artifacts / 'experiment-videos.png'))
+        page.locator('[data-video-time="132"]').click()
+        page.wait_for_function("document.querySelector('#main-video').currentTime >= 132 && !document.querySelector('#main-video').paused")
         duration = page.locator('#main-video').evaluate('(v) => v.duration')
         assert 172 < duration < 174, duration
         page.locator('#main-video').evaluate('(v) => v.pause()')
@@ -119,7 +130,8 @@ try:
         plain = no_js.new_page()
         plain.goto(url)
         assert plain.locator('#main-video').get_attribute('controls') is not None
-        assert plain.locator('[data-video-time="84"]').get_attribute('href').endswith('#t=84')
+        assert plain.locator('[data-video-time="132"]').get_attribute('href').endswith('#t=132')
+        assert plain.locator('#experiments video[controls]').count() == 2
         assert plain.locator('#copy-citation').is_hidden()
         assert plain.locator('#method-loops-toggle').is_hidden()
         assert plain.locator('#method-loops img').count() == 2

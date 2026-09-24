@@ -1,18 +1,18 @@
 # 추가 영상 재료 교체 목록
 
-현재 페이지는 논문 그림과 최종 영상으로 구성되어 있습니다. 개별 영상이 없는 영역은 **최종 영상의 실제 프레임 + Individual clip coming soon**으로 표시합니다. 깨진 링크나 가짜 재생 버튼은 없습니다.
+컵·달걀 실험은 최종 영상에서 추출한 개별 클립으로 재생됩니다. 닦기 실험은 아직 **최종 영상의 실제 프레임 + Individual clip coming soon**으로 표시합니다.
 
 | 위치 | 가져올 재료 | 권장 파일명 | 현재 연결 |
 | --- | --- | --- | --- |
-| Paper cups | nominal / vertical & horizontal wrinkles / PVC tape / plastic / wet plastic 비교 | `static/videos/cup-comparison.mp4` | 최종 영상 00:48 |
-| Eggs | FACE와 네 비교 방법의 egg marking 영상 | `static/videos/egg-comparison.mp4` | 최종 영상 01:24 |
+| Paper cups | 원본 클립으로 교체 가능 | `static/videos/cup-comparison.mp4` | 반영 완료: 00:47–00:58.2 + 마지막 프레임 1초 유지 |
+| Eggs | 원본 클립으로 교체 가능 | `static/videos/egg-comparison.mp4` | 반영 완료: 01:21.5–01:37.2 + 마지막 프레임 1초 유지 |
 | Surface wiping | nominal / wet / soapy / unseen material & geometry 비교 | `static/videos/wiping-comparison.mp4` | 최종 영상 02:12 |
 | Hardware (선택) | handheld demonstration 원본 | `static/videos/handheld-demo.mp4` | 논문 Figure 3 |
 | Method (선택) | encoder / decoder / contact estimation 애니메이션 원본 | `static/videos/method.mp4` | 논문 Figure 2 |
 
 ## 교체 방법
 
-`index.html`에서 `data-media-slot="cup"`, `"egg"`, `"wiping"`을 찾고 해당 div 안의 이미지와 `.slot-label`을 아래 형태로 바꿉니다. 기존 설명과 전체 영상 링크는 유지해도 됩니다.
+컵·달걀 원본을 받으면 위 경로의 MP4를 교체하면 됩니다. 닦기 영상을 추가할 때는 `index.html`의 `data-media-slot="wiping"` 안의 이미지와 `.slot-label`을 아래와 같은 video 요소로 바꿉니다.
 
 ```html
 <video controls playsinline preload="metadata" poster="static/images/geometry.jpg"
@@ -21,7 +21,7 @@
 </video>
 ```
 
-실제 영상 추가 후 하단의 “Individual experiment clips will be added here” 및 관련 figcaption도 수정합니다. 자동 재생은 상단의 무음 미리보기에만 사용합니다.
+닦기 영상 추가 후 해당 figcaption도 수정합니다. 컵·달걀 영상은 무음 자동 반복 재생되며 기본 영상 컨트롤로 일시정지·탐색할 수 있습니다. 추출 구간은 `scripts/prepare_assets.py`에 기록되어 있습니다.
 
 ## 원본과 출처
 
