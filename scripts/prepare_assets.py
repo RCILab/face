@@ -29,7 +29,7 @@ run('-i', args.video, '-map', '0', '-c', 'copy', '-movflags', '+faststart', root
 # Include all six original Success overlays, then hold that frame for one second.
 run('-ss', '48', '-t', '10.2', '-i', args.video, '-an', '-vf', 'scale=960:-2,tpad=stop_mode=clone:stop_duration=1', '-r', '30', '-c:v', 'libx264', '-crf', '25', '-preset', 'medium', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', root / 'static/videos/hero-loop.mp4')
 # Standalone experiment clips retain their original outcomes and method labels.
-for name, start, duration in [('cup-comparison', '47', '11.2'), ('egg-comparison', '81.5', '15.7')]:
+for name, start, duration in [('cup-comparison', '47', '11.2'), ('egg-comparison', '81.5', '15.7'), ('ketchup-wiping', '145', '10.6')]:
     run('-ss', start, '-t', duration, '-i', args.video, '-an', '-vf', 'tpad=stop_mode=clone:stop_duration=1', '-r', '30', '-c:v', 'libx264', '-crf', '23', '-preset', 'medium', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', root / f'static/videos/{name}.mp4')
 for name, second in [('hero', 53), ('video', 0.5), ('demonstration', 30), ('geometry', 54), ('eggs', 90), ('wiping', 150)]:
     run('-ss', second, '-i', args.video, '-frames:v', '1', '-q:v', '2', root / f'static/images/{name}.jpg')

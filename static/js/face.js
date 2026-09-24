@@ -25,21 +25,6 @@ if ('IntersectionObserver' in window) {
 } else { heroVisible = true; updateMotion(); }
 syncMotionLabel();
 
-const video = document.querySelector('#main-video');
-document.querySelectorAll('[data-video-time]').forEach(link => {
-  link.addEventListener('click', event => {
-    event.preventDefault();
-    const seekAndPlay = () => {
-      video.currentTime = Number(link.dataset.videoTime);
-      video.play().catch(() => { /* Native controls remain available. */ });
-    };
-    if (video.readyState >= 1) seekAndPlay();
-    else video.addEventListener('loadedmetadata', seekAndPlay, { once: true });
-    document.querySelector('#video').scrollIntoView({ behavior: reducedMotion.matches ? 'instant' : 'smooth' });
-    video.focus({ preventScroll: true });
-  });
-});
-
 const copy = document.querySelector('#copy-citation');
 copy.hidden = false;
 copy.addEventListener('click', async () => {

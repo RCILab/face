@@ -1,18 +1,18 @@
 # 추가 영상 재료 교체 목록
 
-컵·달걀 실험은 최종 영상에서 추출한 개별 클립으로 재생됩니다. 닦기 실험은 아직 **최종 영상의 실제 프레임 + Individual clip coming soon**으로 표시합니다.
+컵·달걀·케첩 닦기 실험은 최종 영상에서 추출한 개별 클립으로 재생됩니다. 케첩 닦기는 논문 외 추가 실험의 예시로 소개합니다.
 
 | 위치 | 가져올 재료 | 권장 파일명 | 현재 연결 |
 | --- | --- | --- | --- |
 | Paper cups | 원본 클립으로 교체 가능 | `static/videos/cup-comparison.mp4` | 반영 완료: 00:47–00:58.2 + 마지막 프레임 1초 유지 |
 | Eggs | 원본 클립으로 교체 가능 | `static/videos/egg-comparison.mp4` | 반영 완료: 01:21.5–01:37.2 + 마지막 프레임 1초 유지 |
-| Surface wiping | nominal / wet / soapy / unseen material & geometry 비교 | `static/videos/wiping-comparison.mp4` | 최종 영상 02:12 |
+| Ketchup wiping | 원본 클립으로 교체 가능 | `static/videos/ketchup-wiping.mp4` | 반영 완료: FACE 구간 02:25–02:35.6 + 마지막 프레임 1초 유지 |
 | Hardware (선택) | handheld demonstration 원본 | `static/videos/handheld-demo.mp4` | 논문 Figure 3 |
 | Method (선택) | encoder / decoder / contact estimation 애니메이션 원본 | `static/videos/method.mp4` | 논문 Figure 2 |
 
 ## 교체 방법
 
-컵·달걀 원본을 받으면 위 경로의 MP4를 교체하면 됩니다. 닦기 영상을 추가할 때는 `index.html`의 `data-media-slot="wiping"` 안의 이미지와 `.slot-label`을 아래와 같은 video 요소로 바꿉니다.
+원본을 받으면 위 경로의 MP4를 교체하면 됩니다. 세 실험 모두 다음과 같은 네이티브 video 요소를 사용합니다.
 
 ```html
 <video controls playsinline preload="metadata" poster="static/images/geometry.jpg"
@@ -21,7 +21,7 @@
 </video>
 ```
 
-닦기 영상 추가 후 해당 figcaption도 수정합니다. 컵·달걀 영상은 무음 자동 반복 재생되며 기본 영상 컨트롤로 일시정지·탐색할 수 있습니다. 추출 구간은 `scripts/prepare_assets.py`에 기록되어 있습니다.
+세 실험 영상은 무음 자동 반복 재생되며 기본 영상 컨트롤로 일시정지·탐색할 수 있습니다. 추출 구간은 `scripts/prepare_assets.py`에 기록되어 있습니다. 케첩 닦기 클립은 Full Method 구간만 사용하며, 원본에 포함된 결과 표시와 재생 속도 표기를 유지합니다.
 
 ## 원본과 출처
 

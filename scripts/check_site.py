@@ -93,7 +93,7 @@ try:
         page.locator('#method-loops').screenshot(path=str(artifacts / 'method-loops-desktop.png'))
         page.locator('#experiments').scroll_into_view_if_needed()
         assert page.locator('#experiments .slot-label, #experiments [data-video-time]').count() == 0
-        for slot, expected in [('cup', 12.2), ('egg', 16.7)]:
+        for slot, expected in [('cup', 12.2), ('egg', 16.7), ('wiping', 11.6)]:
             clip = page.locator(f'[data-media-slot="{slot}"] video')
             clip.scroll_into_view_if_needed()
             clip.evaluate('(v) => v.play()')
@@ -102,7 +102,10 @@ try:
             assert clip.evaluate('(v) => v.muted && v.loop && v.controls')
             clip.evaluate('(v) => { v.pause(); v.currentTime = v.duration - 0.5; }')
         page.locator('#experiments').screenshot(path=str(artifacts / 'experiment-videos.png'))
-        page.locator('[data-video-time="132"]').click()
+        assert page.locator('.slot-label, [data-video-time]').count() == 0
+        page.locator('#more').screenshot(path=str(artifacts / 'ketchup-wiping-section.png'))
+        page.locator('#main-video').scroll_into_view_if_needed()
+        page.locator('#main-video').evaluate('(v) => { v.currentTime = 132; return v.play(); }')
         page.wait_for_function("document.querySelector('#main-video').currentTime >= 132 && !document.querySelector('#main-video').paused")
         duration = page.locator('#main-video').evaluate('(v) => v.duration')
         assert 172 < duration < 174, duration
@@ -130,8 +133,8 @@ try:
         plain = no_js.new_page()
         plain.goto(url)
         assert plain.locator('#main-video').get_attribute('controls') is not None
-        assert plain.locator('[data-video-time="132"]').get_attribute('href').endswith('#t=132')
         assert plain.locator('#experiments video[controls]').count() == 2
+        assert plain.locator('#more video[controls]').count() == 1
         assert plain.locator('#copy-citation').is_hidden()
         assert plain.locator('#method-loops-toggle').is_hidden()
         assert plain.locator('#method-loops img').count() == 2

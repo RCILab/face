@@ -10,7 +10,7 @@ A static HTML/CSS/JavaScript site, with no build step, CDN, analytics, or runtim
 
 - `index.html`: paper text, figures, experiments, and quantitative results.
 - `static/css/face.css`: responsive layout and visual design.
-- `static/js/face.js`: preview playback, video chapter links, and citation copy.
+- `static/js/face.js`: hero preview playback and citation copy. Cup, egg, and ketchup-wiping experiments play directly in their sections with native video controls.
 - `static/js/method-gifs.js`: pause/play controls for two native GIF illustrations. Per the requested playback behavior, GIFs loop automatically without video autoplay permission or JavaScript; pause switches to a still image. Rebuild with `python scripts/prepare_method_loops.py` (Pillow and imageio-ffmpeg). The FFDP reference figures inspired their visual style; no FFDP friction-cone or denoising claims are attributed to FACE.
 - `MEDIA_TODO.md`: individual clip placeholders, source references, and replacement instructions (Korean).
 - `static/pdfs/face-paper.pdf`: the supplied anonymous manuscript.
@@ -45,7 +45,7 @@ python -m pip install playwright RangeHTTPServer
 python scripts/check_site.py
 ```
 
-The browser check uses an installed Microsoft Edge. It checks relative assets and anchors, responsive overflow at 1440/768/390/320 px, video playback and chapter seeking, reduced motion, preview pause/resume, citation copy, and a JavaScript-disabled fallback. Screenshots are saved outside the repository in `../working/`.
+The browser check uses an installed Microsoft Edge. It checks relative assets and anchors, responsive overflow at 1440/768/390/320 px, video playback and seeking, the three inline experiment clips, reduced motion for the hero, preview pause/resume, citation copy, and a JavaScript-disabled fallback. Screenshots are saved outside the repository in `../working/`.
 
 ## Reference and attribution
 
