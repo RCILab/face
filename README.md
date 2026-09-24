@@ -10,9 +10,10 @@ A static HTML/CSS/JavaScript site, with no build step, CDN, analytics, or runtim
 
 - `index.html`: paper text, figures, experiments, and quantitative results.
 - `static/css/face.css`: responsive layout and visual design.
-- `static/js/face.js`: hero preview playback and citation copy. Cup, egg, and ketchup-wiping experiments play directly in their sections with native video controls.
+- `static/js/face.js`: hero preview playback and citation copy.
+- `static/js/experiment-videos.js`: starts research clips when visible and pauses them offscreen. Native controls remain available, and manual pauses survive scrolling.
 - `static/js/method-gifs.js`: pause/play controls for two native GIF illustrations. Per the requested playback behavior, GIFs loop automatically without video autoplay permission or JavaScript; pause switches to a still image. Rebuild with `python scripts/prepare_method_loops.py` (Pillow and imageio-ffmpeg). The FFDP reference figures inspired their visual style; no FFDP friction-cone or denoising claims are attributed to FACE.
-- `MEDIA_TODO.md`: individual clip placeholders, source references, and replacement instructions (Korean).
+- `MEDIA_TODO.md`: video coverage, source timestamps, and replacement instructions (Korean).
 - `static/pdfs/face-paper.pdf`: the supplied anonymous manuscript.
 - `static/videos/face-final.mp4`: the final video with its original streams, remuxed for progressive playback.
 
@@ -34,9 +35,10 @@ Optional authoring tools (not required to serve the site):
 ```sh
 python -m pip install pymupdf imageio-ffmpeg
 python scripts/prepare_assets.py --paper "../_2026__ICRA___FACE (2).pdf" --video "../ICRA27_3998_VI_i-2.mp4"
+python scripts/prepare_gallery.py --video "../ICRA27_3998_VI_i-2.mp4"
 ```
 
-The extraction script records the paper crop coordinates and video timestamps. It never modifies the source files. The full video is stream-copied, while only the short hero loop is re-encoded.
+The extraction scripts record paper crop coordinates and video timestamps without modifying the source files. The full video is stream-copied; short clips are re-encoded. `scripts/gallery-manifest.json` records each gallery clip's source interval, crop, and outcome hold. Condition crops show separate views of existing footage and do not represent additional trials.
 
 ## Verification
 
@@ -45,7 +47,7 @@ python -m pip install playwright RangeHTTPServer
 python scripts/check_site.py
 ```
 
-The browser check uses an installed Microsoft Edge. It checks relative assets and anchors, responsive overflow at 1440/768/390/320 px, video playback and seeking, the three inline experiment clips, reduced motion for the hero, preview pause/resume, citation copy, and a JavaScript-disabled fallback. Screenshots are saved outside the repository in `../working/`.
+The browser check uses an installed Microsoft Edge. It checks relative assets and anchors, responsive overflow at 1440/768/390/320 px, all 18 research clips and their durations, video playback and seeking, viewport playback with persistent manual pauses, reduced motion for the hero, GIF animation and pause/resume, citation copy, and a JavaScript-disabled fallback. Screenshots are saved outside the repository in `../working/`.
 
 ## Reference and attribution
 

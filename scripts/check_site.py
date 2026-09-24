@@ -93,7 +93,7 @@ try:
         page.locator('#method-loops').screenshot(path=str(artifacts / 'method-loops-desktop.png'))
         page.locator('#experiments').scroll_into_view_if_needed()
         assert page.locator('#experiments .slot-label, #experiments [data-video-time]').count() == 0
-        for slot, expected in [('cup', 12.2), ('egg', 16.7), ('wiping', 11.6)]:
+        for slot, expected in [('cup', 11.2), ('egg', 16.7), ('wiping', 11.6)]:
             clip = page.locator(f'[data-media-slot="{slot}"] video')
             clip.scroll_into_view_if_needed()
             clip.evaluate('(v) => v.play()')
@@ -110,11 +110,41 @@ try:
         duration = page.locator('#main-video').evaluate('(v) => v.duration')
         assert 172 < duration < 174, duration
         page.locator('#main-video').evaluate('(v) => v.pause()')
-        page.locator('summary').click()
-        assert page.locator('details').evaluate('(d) => d.open')
+        page.locator('.figure-details > summary').click()
+        assert page.locator('.figure-details').evaluate('(d) => d.open')
         page.locator('#copy-citation').click()
         assert page.evaluate('navigator.clipboard.readText()').startswith('@misc{face,')
-        page.locator('summary').click()
+        page.locator('.figure-details > summary').click()
+        # Verify all extracted chapters and crops, including videos in details.
+        durations = {item['name']: item['duration'] for item in json.loads((root / 'scripts/gallery-manifest.json').read_text())}
+        durations.update({'egg-comparison':16.7, 'ketchup-wiping':11.6})
+        assert page.locator('.cup-gallery video').count() == 6
+        assert page.locator('.wiping-gallery video').count() == 4
+        assert page.locator('video.research-clip').count() == len(durations)
+        for clip in page.locator('video.research-clip').all():
+            name = Path(clip.locator('source').get_attribute('src')).stem
+            clip.evaluate('(v) => { const details = v.closest("details"); if (details) details.open = true; }')
+            clip.scroll_into_view_if_needed()
+            clip.evaluate('(v) => v.play()')
+            assert abs(clip.evaluate('(v) => v.duration') - durations[name]) < 0.05, name
+        page.locator('.video-details').evaluate_all('(items) => items.forEach(d => d.open = false)')
+        # Visible clips autoplay; deliberate pauses survive leaving the viewport.
+        cup = page.locator('.cup-gallery video').first
+        cup.scroll_into_view_if_needed()
+        page.wait_for_function('!document.querySelector(".cup-gallery video").paused')
+        cup.evaluate('(v) => v.pause()')
+        page.wait_for_timeout(100)
+        page.locator('#results').scroll_into_view_if_needed()
+        cup.scroll_into_view_if_needed()
+        page.wait_for_timeout(150)
+        assert cup.evaluate('(v) => v.paused'), 'Manual pause must be retained'
+        cup.evaluate('(v) => v.play()')
+        page.locator('#results').scroll_into_view_if_needed()
+        page.wait_for_function('document.querySelector(".cup-gallery video").paused')
+        cup.scroll_into_view_if_needed()
+        page.wait_for_function('!document.querySelector(".cup-gallery video").paused')
+        page.locator('#experiments').screenshot(path=str(artifacts / 'experiment-gallery.png'))
+        page.locator('#more').screenshot(path=str(artifacts / 'wiping-gallery.png'))
         for width in (1440, 768, 390, 320):
             page.set_viewport_size({'width': width, 'height': 1000})
             page.evaluate('window.scrollTo(0, 0)')
@@ -125,16 +155,16 @@ try:
             if width == 390:
                 page.locator('#method-loops').screenshot(path=str(artifacts / 'method-loops-mobile.png'))
         # Ensure every image has loaded, including the lazily loaded detail figures.
-        page.locator('summary').click()
-        page.locator('details').scroll_into_view_if_needed()
+        page.locator('.figure-details > summary').click()
+        page.locator('.figure-details').scroll_into_view_if_needed()
         page.wait_for_function('Array.from(document.images).every(i => i.complete && i.naturalWidth > 0)')
         assert not errors, errors
         no_js = browser.new_context(java_script_enabled=False, viewport={'width':390,'height':844})
         plain = no_js.new_page()
         plain.goto(url)
         assert plain.locator('#main-video').get_attribute('controls') is not None
-        assert plain.locator('#experiments video[controls]').count() == 2
-        assert plain.locator('#more video[controls]').count() == 1
+        assert plain.locator('#experiments video[controls]').count() == 8
+        assert plain.locator('#more video[controls]').count() == 7
         assert plain.locator('#copy-citation').is_hidden()
         assert plain.locator('#method-loops-toggle').is_hidden()
         assert plain.locator('#method-loops img').count() == 2
