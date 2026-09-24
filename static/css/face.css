@@ -512,7 +512,6 @@ p+p {
   margin-bottom:5px;
 }
 .method-loop-grid figcaption>span { display:block; padding-right:28px; }
-.method-loop-grid figcaption>a { display:inline-block; font-size:10px; margin-top:8px; }
 .method-loop-note { font-size:11px; color:var(--muted); margin-top:12px; }
 @media(max-width:760px) {
   .method-loop-grid { grid-template-columns:1fr; gap:16px; }
