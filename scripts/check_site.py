@@ -144,6 +144,7 @@ try:
         cup.scroll_into_view_if_needed()
         page.wait_for_function('!document.querySelector(".cup-gallery video").paused')
         page.locator('#experiments').screenshot(path=str(artifacts / 'experiment-gallery.png'))
+        page.locator('#results').screenshot(path=str(artifacts / 'quantitative-evaluation.png'))
         page.locator('#more').screenshot(path=str(artifacts / 'wiping-gallery.png'))
         for width in (1440, 768, 390, 320):
             page.set_viewport_size({'width': width, 'height': 1000})
@@ -163,7 +164,8 @@ try:
         plain = no_js.new_page()
         plain.goto(url)
         assert plain.locator('#main-video').get_attribute('controls') is not None
-        assert plain.locator('#experiments video[controls]').count() == 8
+        assert plain.locator('#experiments video[controls]').count() == 6
+        assert plain.locator('#results video[controls]').count() == 2
         assert plain.locator('#more video[controls]').count() == 7
         assert plain.locator('#copy-citation').is_hidden()
         assert plain.locator('#method-loops-toggle').is_hidden()

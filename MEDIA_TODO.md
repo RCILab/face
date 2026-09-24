@@ -12,8 +12,8 @@
 | 00:43.7–00:46.7 | 같은 도구를 로봇에 장착 | `robot-transfer.mp4` / Hardware |
 | 00:47–00:58.2 | 컵 6개 조건 | `cup-nominal`, `cup-vertical`, `cup-horizontal`, `cup-pvc`, `cup-plastic`, `cup-wet` / Experiments |
 | 00:48–00:58.2 | 6개 Success 표시 | `hero-loop.mp4` / 상단 미리보기 |
-| 01:08–01:18.2 | 컵 3개 조건 × 5개 방법 비교 | `cup-baselines.mp4` / Controlled comparisons |
-| 01:21.5–01:37.2 | 달걀 5개 방법 비교 | `egg-comparison.mp4` / Controlled comparisons |
+| 01:08–01:18.2 | 컵 3개 조건 × 5개 방법 비교 | `cup-baselines.mp4` / Quantitative evaluation |
+| 01:21.5–01:37.2 | 달걀 5개 방법 비교 | `egg-comparison.mp4` / Quantitative evaluation |
 | 01:41.2–02:06.2 | 알고리즘 세 단계 | `method-walkthrough.mp4` / Method 펼침 영역 |
 | 02:12.5–02:20.7 | Direct Force 닦기 비교 | `wiping-baseline.mp4` / Additional experiments |
 | 02:22–02:25 | 물·비누 및 다른 접시 준비 | `surface-preparation.mp4` / 펼침 영역 |
