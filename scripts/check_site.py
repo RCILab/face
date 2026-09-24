@@ -74,15 +74,22 @@ try:
         page.locator('#hero-video').evaluate('(v) => v.currentTime = 5')
         page.screenshot(path=str(artifacts / 'desktop-hero.png'))
         page.locator('#method').screenshot(path=str(artifacts / 'desktop-method.png'))
-        # Compact concept loops honor reduced motion and user playback control.
+        # GIFs animate directly, including with video autoplay disabled or
+        # reduced motion configured. Pause explicitly switches to stills.
         page.locator('#method-loops').scroll_into_view_if_needed()
-        assert page.locator('#method-loops-toggle').inner_text() == 'Play animations'
-        assert page.locator('#method-loops video').evaluate_all('(vs) => vs.every(v => v.paused)')
+        assert page.locator('#method-loops-toggle').inner_text() == 'Pause animations'
+        page.wait_for_function("Array.from(document.querySelectorAll('#method-loops img')).every(i => i.complete && i.naturalWidth > 0)")
+        first = page.locator('#method-loops img').nth(1).screenshot()
+        page.wait_for_timeout(600)
+        assert first != page.locator('#method-loops img').nth(1).screenshot(), 'GIF must visibly animate'
         page.locator('#method-loops-toggle').click()
-        page.wait_for_function("Array.from(document.querySelectorAll('#method-loops video')).every(v => !v.paused && v.currentTime > 0)")
+        assert page.locator('#method-loops img').evaluate_all('(images) => images.every(i => i.src.endsWith(".png"))')
+        page.wait_for_function("Array.from(document.querySelectorAll('#method-loops img')).every(i => i.complete)")
+        still = page.locator('#method-loops img').nth(1).screenshot()
+        page.wait_for_timeout(400)
+        assert still == page.locator('#method-loops img').nth(1).screenshot(), 'Pause must remain still'
         page.locator('#method-loops-toggle').click()
-        assert page.locator('#method-loops video').evaluate_all('(vs) => vs.every(v => v.paused)')
-        page.locator('#method-loops video').evaluate_all('(vs) => vs.forEach(v => v.currentTime = 5)')
+        assert page.locator('#method-loops img').evaluate_all('(images) => images.every(i => i.src.endsWith(".gif"))')
         page.locator('#method-loops').screenshot(path=str(artifacts / 'method-loops-desktop.png'))
         page.locator('[data-video-time="84"]').click()
         page.wait_for_function("document.querySelector('#main-video').currentTime >= 84 && !document.querySelector('#main-video').paused")
@@ -115,7 +122,12 @@ try:
         assert plain.locator('[data-video-time="84"]').get_attribute('href').endswith('#t=84')
         assert plain.locator('#copy-citation').is_hidden()
         assert plain.locator('#method-loops-toggle').is_hidden()
-        assert plain.locator('#method-loops video').count() == 2
+        assert plain.locator('#method-loops img').count() == 2
+        plain.locator('#method-loops').scroll_into_view_if_needed()
+        plain.wait_for_function("Array.from(document.querySelectorAll('#method-loops img')).every(i => i.complete && i.naturalWidth > 0)")
+        first = plain.locator('#method-loops img').nth(1).screenshot()
+        plain.wait_for_timeout(600)
+        assert first != plain.locator('#method-loops img').nth(1).screenshot(), 'GIF must animate without JS'
         browser.close()
     print(json.dumps({'status':'passed', 'widths':[1440,768,390,320], 'video_duration':duration, 'javascript_errors':errors, 'checks':['local assets and anchors','video playback and seek','reduced motion','pause/resume','clipboard','details','no JavaScript fallback'], 'screenshots':str(artifacts)}, indent=2))
 finally:
