@@ -474,6 +474,12 @@ p+p {
   font-size:12px;
   color:var(--muted);
 }
+.factor-symbol img {
+  display:inline-block;
+  width:44px;
+  height:48px;
+  vertical-align:-10px;
+}
 .method-loop-toolbar button {
   border:0;
   border-bottom:1px solid var(--green);
