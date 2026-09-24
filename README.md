@@ -1,80 +1,55 @@
-# Academic Project Page Template
+﻿# FACE project page
 
-> **Update (September 2025)**: This template has been modernized with better design, SEO, and mobile support. For the original version, see the [original-version branch](https://github.com/eliahuhorwitz/Academic-project-page-template/tree/original-version).
+Website for **Contact-Aware Imitation Learning Through Contact Factorization**.
 
-A clean, responsive template for academic project pages.
+Live page: https://rcilab.khu.ac.kr/face/
 
+A static HTML/CSS/JavaScript site, with no build step, CDN, analytics, or runtime dependencies. GitHub Pages serves the root of `master`.
 
-Example project pages built using this template are:
-- https://horwitz.ai/probex
-- https://vision.huji.ac.il/probegen
-- https://horwitz.ai/mother
-- https://horwitz.ai/spectral_detuning
-- https://vision.huji.ac.il/ladeda
-- https://vision.huji.ac.il/dsire
-- https://horwitz.ai/podd
-- https://dreamix-video-editing.github.io
-- https://horwitz.ai/conffusion
-- https://horwitz.ai/3d_ads/
-- https://vision.huji.ac.il/ssrl_ad
-- https://vision.huji.ac.il/deepsim
+## Editing
 
+- `index.html`: paper text, figures, experiments, and quantitative results.
+- `static/css/face.css`: responsive layout and visual design.
+- `static/js/face.js`: preview playback, video chapter links, and citation copy.
+- `MEDIA_TODO.md`: individual clip placeholders, source references, and replacement instructions (Korean).
+- `static/pdfs/face-paper.pdf`: the supplied anonymous manuscript.
+- `static/videos/face-final.mp4`: the final video with its original streams, remuxed for progressive playback.
 
+The first draft retains anonymous authors and `noindex`. Publication metadata and author names should be updated when supplied; no acceptance status or release date is assumed.
 
-## Start using the template
-To start using the template click on `Use this Template`.
+## Local preview
 
-The template uses html for controlling the content and css for controlling the style. 
-To edit the websites contents edit the `index.html` file. It contains different HTML "building blocks", use whichever ones you need and comment out the rest.  
+```sh
+python -m pip install RangeHTTPServer
+python -m RangeHTTPServer 8000
+```
 
-**IMPORTANT!** Make sure to replace the `favicon.ico` under `static/images/` with one of your own, otherwise your favicon is going to be a dreambooth image of me.
+Open http://localhost:8000/. A range-capable preview server supports seeking in the video before the entire file downloads, as GitHub Pages does. The main content, PDF, video, navigation, and expandable results also work without JavaScript.
 
-## What's New
+## Regenerate supplied media
 
-- Modern, clean design with better mobile support
-- Improved SEO with proper meta tags and structured data
-- Performance improvements (lazy loading, optimized assets)
-- More Works dropdown
-- Copy button for BibTeX citations
-- Better accessibility
+Optional authoring tools (not required to serve the site):
 
-## Components
+```sh
+python -m pip install pymupdf imageio-ffmpeg
+python scripts/prepare_assets.py --paper "../_2026__ICRA___FACE (2).pdf" --video "../ICRA27_3998_VI_i-2.mp4"
+```
 
-- Teaser video
-- Image carousel
-- YouTube video embedding
-- Video carousel
-- PDF poster viewer
-- BibTeX citation
+The extraction script records the paper crop coordinates and video timestamps. It never modifies the source files. The full video is stream-copied, while only the short hero loop is re-encoded.
 
-## Customization
+## Verification
 
-The HTML file has TODO comments showing what to replace:
+```sh
+python -m pip install playwright RangeHTTPServer
+python scripts/check_site.py
+```
 
-- Paper title, authors, institution, conference
-- Links (arXiv, GitHub, etc.)
-- Abstract and descriptions  
-- Videos, images, and PDFs
-- Related works in the dropdown
-- Meta tags for SEO and social sharing
+The browser check uses an installed Microsoft Edge. It checks relative assets and anchors, responsive overflow at 1440/768/390/320 px, video playback and chapter seeking, reduced motion, preview pause/resume, citation copy, and a JavaScript-disabled fallback. Screenshots are saved outside the repository in `../working/`.
 
-### Meta Tags
-The template includes meta tags for better search engine visibility and social media sharing. These appear in the `<head>` section and help with:
-- Google Scholar indexing
-- Social media previews (Twitter, Facebook, LinkedIn)
-- Search engine optimization
+## Reference and attribution
 
-Create a 1200x630px social preview image at `static/images/social_preview.png`.
+The information flow was inspired by [CAMP-MPPI](https://rcilab.khu.ac.kr/CAMP-MPPI/) ([source](https://github.com/RCILab/CAMP-MPPI), reference revision `3173bb5`). A separate reference checkout is kept alongside this repository in `../reference-camp-mppi/`.
 
-## Tips
+The original repository was generated from the [RCI paper page template](https://github.com/RCILab/RCI_paper_page_template), based on the [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template) and [Nerfies](https://nerfies.github.io/). The draft replaces the sample content and front-end assets with a FACE-specific page.
 
-- Compress images with [TinyPNG](https://tinypng.com)
-- Use YouTube for large videos (>10MB)  
-- Replace the favicon in `static/images/`
-- Works with GitHub Pages
-
-## Acknowledgments
-Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
-
-## Website License
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+Website license: [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/), retained from the original template. This website notice does not assign a new license to the research manuscript or video.
