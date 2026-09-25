@@ -1,0 +1,685 @@
+{
+  "sources": {
+    "_2026__ICRA___FACE.pdf": "52b5f3bab99f5a1c80f1e3f3cd87adde5d2813095f0ecd78d5065f2df7dc9fb2",
+    "FACE (2).pptx": "44f5c4f2bd660008553a094cf953ad7faa88cda5d63de838f0fea9e1dfa29958",
+    "ICRA27_3998_VI_i-2.mp4": "9c5bbc7533b4219fc72d2150bd9dd9f2e877794ed9cbbfcd06830c4a6b086160"
+  },
+  "videos": [
+    {
+      "path": "static/videos/cup-nominal.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media19.mp4",
+      "slide": 3,
+      "source_sha256": "b506341a985a810ad254532a321116605dc167f27ce4bdb415813e4e87de63b2",
+      "sha256": "674e0737fd7cf6588e555fdeb1f47b20c8efc3291b34209ee0f220d6ac2acd0b",
+      "duration": 15.0,
+      "transform": "Full source duration; H.264, width 720, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/cup-nominal.jpg",
+      "poster_time": 7,
+      "poster_sha256": "d0d7d33f483ca61e66565405480d30ce96f0d2e8d8bbd01770899f0f5f87c0df"
+    },
+    {
+      "path": "static/videos/cup-vertical.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media18.mp4",
+      "slide": 3,
+      "source_sha256": "9ea8c449f20e02d344135fa534c97f222db952139faad67cf62dcf3a10d9b095",
+      "sha256": "03c0c049e375af4c04ede8119cdfc5df44c659844decb506c8991429d1dc4365",
+      "duration": 15.0,
+      "transform": "Full source duration; H.264, width 720, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/cup-vertical.jpg",
+      "poster_time": 7,
+      "poster_sha256": "5306c7f54591716939bf2fd1c2f37fe0b5af3dd12c062cabdbae4e1607fbe42f"
+    },
+    {
+      "path": "static/videos/cup-horizontal.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media17.mp4",
+      "slide": 3,
+      "source_sha256": "38fc153d4c1926b5bad40c984a5de0b7bfd131e57cdfe3fdb4f28b0aca883e87",
+      "sha256": "499247147ec4dad46f5775f38c3ebc0f625fbb3728619ec95d64bdff72fbbee9",
+      "duration": 15.0,
+      "transform": "Full source duration; H.264, width 720, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/cup-horizontal.jpg",
+      "poster_time": 7,
+      "poster_sha256": "e2fae4de947f2f9290857ec759c87ebcd01c86d37c9ae15d7b815c5dfd142940"
+    },
+    {
+      "path": "static/videos/cup-pvc.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media16.mp4",
+      "slide": 3,
+      "source_sha256": "f18eafe64ccef96881b93bb64b22d622bdbb2de95ff72baa0f81e18f46221b52",
+      "sha256": "266d72f60463a309389a828eeda62aa310675807662e13620531620db5b65a08",
+      "duration": 15.0,
+      "transform": "Full source duration; H.264, width 720, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/cup-pvc.jpg",
+      "poster_time": 7,
+      "poster_sha256": "300c02c2f09d384d7d57d708366078802ad3c96973255a01b5ca088c80884e8a"
+    },
+    {
+      "path": "static/videos/cup-plastic.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media15.mp4",
+      "slide": 3,
+      "source_sha256": "d30e2f31be065853395284480aba0f68cdda26e3cb26c2fb0ace6aa676c4423d",
+      "sha256": "d23a5bc5626e9a0353feac1dcc34b8622a213ac5d41f2d33d4fb5826b5d9b7b6",
+      "duration": 15.0,
+      "transform": "Full source duration; H.264, width 720, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/cup-plastic.jpg",
+      "poster_time": 7,
+      "poster_sha256": "fc9c1e396ef032e0bdd69edb4490ace906ff2d1a719b1bef542de5317f472258"
+    },
+    {
+      "path": "static/videos/cup-wet.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media14.mp4",
+      "slide": 3,
+      "source_sha256": "799dd289b06703243b6f4422de1e481a395ac11e576f68c4350218169a8ae024",
+      "sha256": "f07cbed7bbf61d9fe296eb2e0f8c5767161cd8f53d8f112588d8d26c9eddcafe",
+      "duration": 15.0,
+      "transform": "Full source duration; H.264, width 720, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/cup-wet.jpg",
+      "poster_time": 7,
+      "poster_sha256": "a18909cb3fd2fb3687a9719f8a9d8252668e6eb9e4e57a9b7e4fb14374ece521"
+    },
+    {
+      "path": "static/videos/compare-nominal-face.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media20.mp4",
+      "slide": 5,
+      "source_sha256": "c6890694b7b9bd57cda923175fb55ab07a74b3719bb6273999aa5eaa57b967fd",
+      "sha256": "0164a42e96bbaa493534569e472826c0cebed0332aba08048ac4a1a418f3823c",
+      "duration": 10.0,
+      "transform": "Full source duration; H.264, width 480, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/compare-nominal-face.jpg",
+      "poster_time": 7,
+      "poster_sha256": "5db51a4659abc51307c320732f78d40f60084566d3410eac6dd8bfc49cff495b"
+    },
+    {
+      "path": "static/videos/compare-wet-face.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media21.mp4",
+      "slide": 5,
+      "source_sha256": "f79dd3ecba62ba8b278dc291c6ddaed69b79adf3a742f1e057e3ab9ffa76def9",
+      "sha256": "1d513ae2a47c55c6f8b7349d9fb0337884c908c58f3c52c84163717b74813f98",
+      "duration": 10.0,
+      "transform": "Full source duration; H.264, width 480, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/compare-wet-face.jpg",
+      "poster_time": 7,
+      "poster_sha256": "bce6dd2a35be862fb41fb1229480abf38552e3406f074a7be759799c975ef41b"
+    },
+    {
+      "path": "static/videos/compare-wrinkled-face.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media22.mp4",
+      "slide": 5,
+      "source_sha256": "131406278c6911cad56be20eb7a11e57c8723f9b1a79fd0636acec00c352a76a",
+      "sha256": "87b0ed59aa9acea8e9aa26d85d4a027dd9b30b7daa6744abf7e2efa46b5c6f5f",
+      "duration": 10.0,
+      "transform": "Full source duration; H.264, width 480, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/compare-wrinkled-face.jpg",
+      "poster_time": 7,
+      "poster_sha256": "0f61caf195e4eb1d8448d0fe2e98f6ff71da8744c6438f147f58c51ce2aad603"
+    },
+    {
+      "path": "static/videos/compare-wrinkled-vision.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media23.mp4",
+      "slide": 5,
+      "source_sha256": "82e31ea13ec85ae794ff9ff1649195dc19b68f36f83f26ea36bf489b6acd85eb",
+      "sha256": "abebf56233fdcfe3a5dd8ea4458873a78e72a40cc0ee2ddc5d2dfb5534e2a1c8",
+      "duration": 10.0,
+      "transform": "Full source duration; H.264, width 480, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/compare-wrinkled-vision.jpg",
+      "poster_time": 7,
+      "poster_sha256": "73f0b0c0ebf9093dad1a8260eaa0f539c0c507c19289ba54e32124308dc103f8"
+    },
+    {
+      "path": "static/videos/compare-nominal-vision.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media24.mp4",
+      "slide": 5,
+      "source_sha256": "77c578e3ab7e58e5d8f0c98a6bea4be80432cfefb681c830c79e0593230010ff",
+      "sha256": "359ae24b8d9982d4c0e642bc308b125bb989ba586ed4da86782793beb428c319",
+      "duration": 10.0,
+      "transform": "Full source duration; H.264, width 480, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/compare-nominal-vision.jpg",
+      "poster_time": 7,
+      "poster_sha256": "5916eb57cd8e8d7b3b20b67bfc877b00394c51aaf87c69dd13b8e4fc53d285f7"
+    },
+    {
+      "path": "static/videos/compare-wet-vision.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media25.mp4",
+      "slide": 5,
+      "source_sha256": "c07d5c1475e68203b37511f5b31cdbaa550ef9043f1b8c415a36227597ab28ef",
+      "sha256": "45b6c0d3b849c17f825b6451eef4b3a0aaf203189209883ab6fde1838e5ba512",
+      "duration": 10.0,
+      "transform": "Full source duration; H.264, width 480, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/compare-wet-vision.jpg",
+      "poster_time": 7,
+      "poster_sha256": "dfb242cc88a0524db6e73e1bf3ba2467fd995e1c67c233e44c53fb90d23e0785"
+    },
+    {
+      "path": "static/videos/compare-wet-observation.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media26.mp4",
+      "slide": 5,
+      "source_sha256": "80b9fde1f969ba87301b5ae99cdcf3b836ce98b2267db7aa11ab3d2e4370ae1e",
+      "sha256": "1a8f121a65b4fcc7ff76da87f9f5c21fafc9f824c98b29ac51c3c410ef6c018c",
+      "duration": 10.0,
+      "transform": "Full source duration; H.264, width 480, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/compare-wet-observation.jpg",
+      "poster_time": 7,
+      "poster_sha256": "3be16502befef6a23ef9b3831f07fbf0758d64e4b90c9b31edc3cd2818af6e97"
+    },
+    {
+      "path": "static/videos/compare-wrinkled-observation.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media27.mp4",
+      "slide": 5,
+      "source_sha256": "4ee5aa16d845e2863ae09b2cb8dae08154c3c3c8580259b2393b06e9f70a6ffa",
+      "sha256": "407b1b4246dcf8f2d6d08b02ae71a9da5b0c63fc6cbb84ba2dc1f7bc4661bfa8",
+      "duration": 10.0,
+      "transform": "Full source duration; H.264, width 480, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/compare-wrinkled-observation.jpg",
+      "poster_time": 7,
+      "poster_sha256": "8aa9a58f0b32c9fe8a1fb954914a655df633b233518f69c623d5c6f1dfd1e015"
+    },
+    {
+      "path": "static/videos/compare-nominal-observation.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media28.mp4",
+      "slide": 5,
+      "source_sha256": "7f5220b8a29c20e6cbb292e811da4e0fa903fc53707c6ea812e4df47f03b1413",
+      "sha256": "43337ff46d6ebddc774ed04b5ecab625eed28e2dcc00de01fc1be105c95feea7",
+      "duration": 10.0,
+      "transform": "Full source duration; H.264, width 480, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/compare-nominal-observation.jpg",
+      "poster_time": 7,
+      "poster_sha256": "839e425faf6bf2fbe42dbe04cc15374b53be3cae1197894fed861cfad1a8fd9f"
+    },
+    {
+      "path": "static/videos/compare-wet-direct.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media29.mp4",
+      "slide": 5,
+      "source_sha256": "48281c2ef31ae2cd6a89c11e479e30234273874d8ddfca087acea9a462e247a1",
+      "sha256": "2ea47b117b0b786406210a0746a9fa57971865d5f0df4dad708e8b58074025eb",
+      "duration": 10.0,
+      "transform": "Full source duration; H.264, width 480, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/compare-wet-direct.jpg",
+      "poster_time": 7,
+      "poster_sha256": "e6702a4b39b2f2a1de5362a1189970890614315bd373594b563bcb72da1366d8"
+    },
+    {
+      "path": "static/videos/compare-wrinkled-direct.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media30.mp4",
+      "slide": 5,
+      "source_sha256": "ed89e260b9fd24f171c800da5d99d25ff3a8006b0c4900826cf73341e68476fe",
+      "sha256": "edef99daaf12488c1280be1745f819339b2670fd1c698acdc25890166119de0c",
+      "duration": 10.0,
+      "transform": "Full source duration; H.264, width 480, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/compare-wrinkled-direct.jpg",
+      "poster_time": 7,
+      "poster_sha256": "364bb865bfed1b2cf1cffd9a1ae8171804061798c915819d16494ddba88be95b"
+    },
+    {
+      "path": "static/videos/compare-nominal-direct.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media31.mp4",
+      "slide": 5,
+      "source_sha256": "07c96e8e85d5798413f757245f891eeee0b4935256ad61772ee57d8170f933c5",
+      "sha256": "4ba85ee5adbd0b1912bedca009a2d31228dac627844462c0ad1e7e3e93527c6a",
+      "duration": 10.0,
+      "transform": "Full source duration; H.264, width 480, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/compare-nominal-direct.jpg",
+      "poster_time": 7,
+      "poster_sha256": "3e0fbed9b1cbd6dac3062751be08bd898597598b5f6c86a6f95a74eded922dd6"
+    },
+    {
+      "path": "static/videos/compare-nominal-analytic.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media32.mp4",
+      "slide": 5,
+      "source_sha256": "af32c75298f9e83c2aa050dc36632af5705d161def27844c9d1884210c6402d0",
+      "sha256": "6ac8aa91e2c73d1791407d0fbbc1e76403b58b24a073cbf61e2bd1acaf79677d",
+      "duration": 10.0,
+      "transform": "Full source duration; H.264, width 480, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/compare-nominal-analytic.jpg",
+      "poster_time": 7,
+      "poster_sha256": "7c86f2e9a54fef0fd8feb4452b12a6fd5d0223eaad46a0f087783d7d5b505280"
+    },
+    {
+      "path": "static/videos/compare-wet-analytic.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media33.mp4",
+      "slide": 5,
+      "source_sha256": "a209384cb2c3c9bed21760544bfdff45e27417737368321790ad4b40148034a2",
+      "sha256": "f549ac7a17c4a9f3012ae4956e6ecaec8581104144adcb42c9532a5a6bdb0002",
+      "duration": 10.0,
+      "transform": "Full source duration; H.264, width 480, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/compare-wet-analytic.jpg",
+      "poster_time": 7,
+      "poster_sha256": "4e326bf602aad76bb2c83641c399f07a40acafcf1355258ef60696df4b69f68b"
+    },
+    {
+      "path": "static/videos/compare-wrinkled-analytic.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media34.mp4",
+      "slide": 5,
+      "source_sha256": "de41a6ffb8add6863476e776ce98b8e33c6a4d98813edbd23668877711b7e65c",
+      "sha256": "1128427615d262b5f4cea43a3ff3fafa373c7fd057aadef2517cd88541e1ebf7",
+      "duration": 10.0,
+      "transform": "Full source duration; H.264, width 480, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/compare-wrinkled-analytic.jpg",
+      "poster_time": 7,
+      "poster_sha256": "f26de9560416a17c73bb10b85cccccb7928962073979db8e97a91cca324538f6"
+    },
+    {
+      "path": "static/videos/egg-direct.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media35.mp4",
+      "slide": 6,
+      "source_sha256": "563d8107696f5bcb0b4f87f40b2c8c0b76b1aead135fe7722e9c0f0771732460",
+      "sha256": "0858b5ad0e6804f2bb148cba2e0d36184d4409fc74b6f063e83f03225e1d3406",
+      "duration": 20.0,
+      "transform": "Full source duration; H.264, width 342, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/egg-direct.jpg",
+      "poster_time": 7,
+      "poster_sha256": "319d94118587248e5d9f7d694bbb8d457a650bbb47869d0a5f72f42781ea847e"
+    },
+    {
+      "path": "static/videos/egg-observation.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media36.mp4",
+      "slide": 6,
+      "source_sha256": "1fbefaaa8cf2d3bde6565a123318172705b8a76e49e979b64d17b6646abc68fc",
+      "sha256": "0302c54d2a1e8bac23c0a64edadf0cff91aee9861c832ff32aaf3570c1c20538",
+      "duration": 20.0,
+      "transform": "Full source duration; H.264, width 342, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/egg-observation.jpg",
+      "poster_time": 7,
+      "poster_sha256": "97cef7f635218a95f5ef2cb7e6ffde81ce49c1f093504ce52f35bffff97915ac"
+    },
+    {
+      "path": "static/videos/egg-analytic.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media37.mp4",
+      "slide": 6,
+      "source_sha256": "671230685d53ba37deddecfd462c05cc77a60894900f12670f993a70c662d993",
+      "sha256": "8754606cac58e17116bc453a808ca3f4469c7ed96f718e06ffb920de515138e3",
+      "duration": 20.0,
+      "transform": "Full source duration; H.264, width 342, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/egg-analytic.jpg",
+      "poster_time": 7,
+      "poster_sha256": "603058db5f7187212c4d8f68abbaae3aacadc3b32cb0e936ee9dfe3f1bfb7053"
+    },
+    {
+      "path": "static/videos/egg-vision.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media38.mp4",
+      "slide": 6,
+      "source_sha256": "cbb83033523e7297d1524731cc0e7cbfdcbc3f6e8987d5c1a8390ef473c5f9fe",
+      "sha256": "a74e200a07cee29f264dea3063298af7ba1b42b0598d587e400cfbe3fd67ee13",
+      "duration": 20.0,
+      "transform": "Full source duration; H.264, width 342, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/egg-vision.jpg",
+      "poster_time": 7,
+      "poster_sha256": "831cca48f1d9ac27a11017b182e65179b336f225287bccb29843417bf1332a69"
+    },
+    {
+      "path": "static/videos/egg-face.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media39.mp4",
+      "slide": 6,
+      "source_sha256": "c210bfa0b8e230eb0ac698377a33d05a563507c491bf6dc62f294ef7463fa52e",
+      "sha256": "1c8ee154a55d53291fc5a68a7f09d07aeece8b249fc788d28e12b69160dce26d",
+      "duration": 20.0,
+      "transform": "Full source duration; H.264, width 342, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/egg-face.jpg",
+      "poster_time": 7,
+      "poster_sha256": "7c38488a1010da0fc8955cb1f27acb7f371b6bb54526bd1dd1eaa1c37a8f03ca"
+    },
+    {
+      "path": "static/videos/wiping-unseen-direct.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media41.mp4",
+      "slide": 10,
+      "source_sha256": "81b2fd6fdf5f402ad7fc239a2eb798a2de2ecf07f5e7e154f00385a35fa8a47d",
+      "sha256": "7b8eceb170cc2678fdb6d17bfc53a9f40696c5332a0263c5e780ffe498f7c89b",
+      "duration": 12.0,
+      "transform": "Full source duration; H.264, width 960, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/wiping-unseen-direct.jpg",
+      "poster_time": 7,
+      "poster_sha256": "b09023676c94256b8baeed5bebfd620d8dcd81b76a089f6520482d57b9f1c503"
+    },
+    {
+      "path": "static/videos/wiping-nominal-direct.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media42.mp4",
+      "slide": 10,
+      "source_sha256": "9a3ffad7decdf2aaa9f4fa8d590505335f25d2711a477c542647e8d3d5a9abf6",
+      "sha256": "40ab3d6fdddc1366e89a98ced38904916b60ed71e34ab164698977e13819ba88",
+      "duration": 12.0,
+      "transform": "Full source duration; H.264, width 960, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/wiping-nominal-direct.jpg",
+      "poster_time": 7,
+      "poster_sha256": "2e88b11a37cd59a7101a3cd16753d2ebcdae68972b7631b5162d5ee6375f76bf"
+    },
+    {
+      "path": "static/videos/wiping-wet-direct.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media43.mp4",
+      "slide": 10,
+      "source_sha256": "ee960e60590d38e7f58ddb881b51666711d663fe12b4b61d35c50c4083d983a3",
+      "sha256": "a8f714408d7d4beda6ad0dc00aa2a189d5db79e092678b4ad16cfaab7c5dfb2c",
+      "duration": 12.0,
+      "transform": "Full source duration; H.264, width 960, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/wiping-wet-direct.jpg",
+      "poster_time": 7,
+      "poster_sha256": "6f48af6100d71a0cee2d01a8eb90aa1d64147a0c2891c8df2c8b808de05b0f5f"
+    },
+    {
+      "path": "static/videos/wiping-soapy-direct.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media44.mp4",
+      "slide": 10,
+      "source_sha256": "4528b7f053f2985940d244841b37728fb4fd1e1c0c7d8ea07397aad3c7328aff",
+      "sha256": "32eed7812ae9638423192c78baca22de51408e4f1743b084db5d47102187708b",
+      "duration": 12.0,
+      "transform": "Full source duration; H.264, width 960, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/wiping-soapy-direct.jpg",
+      "poster_time": 7,
+      "poster_sha256": "41ffdd0fa5b83a29bd94e5f901a45ce1a57867f355d2642be358792f8b854d0c"
+    },
+    {
+      "path": "static/videos/wiping-unseen.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media45.mp4",
+      "slide": 11,
+      "source_sha256": "60d0b93a8edb7468e98fd09ef307e2e78e1ccb19137122b44d747d433d898fc6",
+      "sha256": "19da8d78fe06613fceb4b1ff93568f362c02ab592d93f64e9e420add9944e5ca",
+      "duration": 14.0,
+      "transform": "Full source duration; H.264, width 960, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/wiping-unseen.jpg",
+      "poster_time": 7,
+      "poster_sha256": "87877172cc8d5b76133fcd5bc18b7509cc289b151b45fcfddc867cf1c70d1ad2"
+    },
+    {
+      "path": "static/videos/wiping-nominal.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media46.mp4",
+      "slide": 11,
+      "source_sha256": "4ac27b55f055a5646285b7859fc51414079ef8e40b9b8a5cbafb1d44f444143d",
+      "sha256": "2e0d50838a5bc7125078ab8f5555875c86145e771ac954b6356f395e136fc132",
+      "duration": 15.0,
+      "transform": "Full source duration; H.264, width 960, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/wiping-nominal.jpg",
+      "poster_time": 7,
+      "poster_sha256": "40249a1e477dca70ca28726cbdf810dd55e20350fb7db0c90db3f83d59b5aa95"
+    },
+    {
+      "path": "static/videos/wiping-wet.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media47.mp4",
+      "slide": 11,
+      "source_sha256": "c0e5e683c891450998761dac9a8bac2ac6d7902813cc21511ae27cde5e5805bf",
+      "sha256": "35b9e5b33656d788a030cd40933cc2331cb18c951e4aa5369ea848ddd942365d",
+      "duration": 15.0,
+      "transform": "Full source duration; H.264, width 960, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/wiping-wet.jpg",
+      "poster_time": 7,
+      "poster_sha256": "5244dc6baf96db39c2712e80e50e7614844bb82ae158e9b07f97a54121cad5b2"
+    },
+    {
+      "path": "static/videos/wiping-soapy.mp4",
+      "source": "FACE (2).pptx",
+      "member": "ppt/media/media48.mp4",
+      "slide": 11,
+      "source_sha256": "5abf3770adf1f08ba07dfcf7781786f84ea3f399b5499196d347742e15aeb7c0",
+      "sha256": "ca0fbf234b016cc9576ed85376404d38f117c8566654a9cd67b903cac36f6b94",
+      "duration": 15.0,
+      "transform": "Full source duration; H.264, width 960, 30 fps, no audio track; no crop or retiming. Existing source speed labels retained.",
+      "poster": "static/images/wiping-soapy.jpg",
+      "poster_time": 7,
+      "poster_sha256": "be9b237b1b40530bf5b600a7f030dc798b83b9caad575d58ee69e78624d6adb3"
+    },
+    {
+      "path": "static/videos/face-full.mp4",
+      "source": "ICRA27_3998_VI_i-2.mp4",
+      "source_sha256": "9c5bbc7533b4219fc72d2150bd9dd9f2e877794ed9cbbfcd06830c4a6b086160",
+      "sha256": "e5a1c458771cbad7df34c8214f659780224e60fb7884dd8df1b52da4c742922f",
+      "duration": 172.9,
+      "transform": "Full supplied video; video stream copied without crop, retiming or re-encoding; no audio track. Source metadata removed; MP4 faststart enabled.",
+      "poster": "static/images/face-full.jpg",
+      "poster_time": 15,
+      "poster_sha256": "e3fa307ff49c5be899158c40617cccb4d9e782c4ed572f3eb076746df4b5609d"
+    }
+  ],
+  "images": [
+    {
+      "path": "static/images/architecture.png",
+      "source": "_2026__ICRA___FACE.pdf",
+      "page": 2,
+      "crop_pdf_points": [
+        82,
+        49,
+        538,
+        226
+      ],
+      "sha256": "ab48c91005f2829f98262d3173f7589efd231f6eb41f95082f2680150fe3ec4b",
+      "transform": "Crop excludes paper caption; original diagram retained."
+    },
+    {
+      "path": "static/images/contact-estimation.png",
+      "source": "_2026__ICRA___FACE.pdf",
+      "page": 6,
+      "crop_pdf_points": [
+        56,
+        51,
+        552,
+        285
+      ],
+      "sha256": "70c7b970714e8192a516890371af5553db1937d5cdfc2bf17956b295a7bee95b",
+      "transform": "Crop excludes paper caption; original diagram retained."
+    }
+  ],
+  "slides": [
+    {
+      "slide": 1,
+      "text": "FACE | Contact-Aware Imitation Learning Through Contact Factorization",
+      "embedded_media": [
+        "../media/media1.mp4",
+        "../media/media10.mp4",
+        "../media/media11.mp4",
+        "../media/media12.mp4",
+        "../media/media2.mp4",
+        "../media/media3.mp4",
+        "../media/media4.mp4",
+        "../media/media5.mp4",
+        "../media/media6.mp4",
+        "../media/media7.mp4",
+        "../media/media8.mp4",
+        "../media/media9.mp4"
+      ]
+    },
+    {
+      "slide": 2,
+      "text": "Human demonstrations under nominal contact conditions | One fixed policy with online adaptation across unseen contact conditions. | FACE factorizes interaction to separate task behavior | from friction scale and contact normal.",
+      "embedded_media": [
+        "../media/media13.MP4"
+      ]
+    },
+    {
+      "slide": 3,
+      "text": "Nominal |   | Surface | Vertically Wrinkled Surface | Horizontally Wrinkled Surface | PVC Tape | Plastic Shell | Wet Plastic Shell | Robot deployment under unseen contact conditions",
+      "embedded_media": [
+        "../media/media14.mp4",
+        "../media/media15.mp4",
+        "../media/media16.mp4",
+        "../media/media17.mp4",
+        "../media/media18.mp4",
+        "../media/media19.mp4"
+      ]
+    },
+    {
+      "slide": 4,
+      "text": "Nominal |   | Surface | Vertically Wrinkled Surface | Horizontally Wrinkled Surface | PVC Tape | Plastic Shell | Wet Plastic Shell | Success | Success | Success | Success | Success | Success | Robot deployment under unseen contact conditions",
+      "embedded_media": [
+        "../media/media14.mp4",
+        "../media/media15.mp4",
+        "../media/media16.mp4",
+        "../media/media17.mp4",
+        "../media/media18.mp4",
+        "../media/media19.mp4"
+      ]
+    },
+    {
+      "slide": 5,
+      "text": "Full |   | Method | Vision Only | Direct Force | Force as Obs. | Analytic Normal | Nominal Surface | Unseen friction (Wet Plastic Shell) | Unseen contact-normal (Horizontally Wrinkled Surface) | Comparison case #1: “S” marking on paper cup",
+      "embedded_media": [
+        "../media/media20.mp4",
+        "../media/media21.mp4",
+        "../media/media22.mp4",
+        "../media/media23.mp4",
+        "../media/media24.mp4",
+        "../media/media25.mp4",
+        "../media/media26.mp4",
+        "../media/media27.mp4",
+        "../media/media28.mp4",
+        "../media/media29.mp4",
+        "../media/media30.mp4",
+        "../media/media31.mp4",
+        "../media/media32.mp4",
+        "../media/media33.mp4",
+        "../media/media34.mp4"
+      ]
+    },
+    {
+      "slide": 6,
+      "text": "Full |   | Method | Vision Only | Direct Force | Force as Obs. | Analytic Normal | Full Method | Success | Contact Loss | Insufficient Force | Excessive Force | Incorrect Direction | Comparison case #2: “S” marking on egg",
+      "embedded_media": [
+        "../media/media35.mp4",
+        "../media/media36.mp4",
+        "../media/media37.mp4",
+        "../media/media38.mp4",
+        "../media/media39.mp4"
+      ]
+    },
+    {
+      "slide": 7,
+      "text": "Encoder | Decoder | Contact Factorization & Reparameterization | Online Contact Estimation | Hybrid Compliance Control | Normalized | Visuomotor Policy | Compliance | Controller | friction | contact direction | Contact-Factor Estimator | contact-dependence removal | contact-aware adaptation | pose/force | commands | wrist wrench | (500Hz) | wrist image & pose | (30Hz) | Contact Factorization & Reparameterization | Decouple policy learning from contact-specific scale and direction, then restore them for execution. | Online Contact Estimation | Remove contact-dependent scale and direction, then restore them for execution. | Hybrid Compliance Control | Combine motion tracking with force regulation to maintain compliant contact during execution. | How FACE works",
+      "embedded_media": [
+        "../media/media40.mp4"
+      ]
+    },
+    {
+      "slide": 8,
+      "text": "Contact Factorization & Reparameterization | Online Contact Estimation | Hybrid Compliance Control | Normalized | Visuomotor Policy | Compliance | Controller | friction | contact direction | Contact-Factor Estimator | contact-dependence removal | contact-aware adaptation | pose/force | commands | Encoder | Decoder | wrist wrench | (500Hz) | wrist image & pose | (30Hz) | Remove contact-dependent scale and direction, then restore them for execution.",
+      "embedded_media": [
+        "../media/media40.mp4"
+      ]
+    },
+    {
+      "slide": 9,
+      "text": "Contact Factorization & Reparameterization | Online Contact Estimation | Hybrid Compliance Control | Normalized | Visuomotor Policy | Compliance | Controller | friction | contact direction | Contact-Factor Estimator | contact-dependence removal | contact-aware adaptation | pose/force | commands | Encoder | Decoder | wrist wrench | (500Hz) | wrist image & pose | (30Hz) | Combine motion tracking with force regulation to maintain compliant contact during execution.",
+      "embedded_media": [
+        "../media/media40.mp4"
+      ]
+    },
+    {
+      "slide": 10,
+      "text": "Baseline: Direct Force | Nominal Surface | Unseen Material & Geometry | Wet Surface | Soapy Surface | Additional task evaluation: Ketchup Wiping | Without contact-aware adaptation,  | the learned behavior transfers poorly across changing contact conditions.",
+      "embedded_media": [
+        "../media/media41.mp4",
+        "../media/media42.mp4",
+        "../media/media43.mp4",
+        "../media/media44.mp4"
+      ]
+    },
+    {
+      "slide": 11,
+      "text": "Full Method | Nominal Surface | Unseen Material & Geometry | Wet Surface | Soapy Surface",
+      "embedded_media": [
+        "../media/media45.mp4",
+        "../media/media46.mp4",
+        "../media/media47.mp4",
+        "../media/media48.mp4"
+      ]
+    },
+    {
+      "slide": 12,
+      "text": "For more information, please visit | https://anonymous.4open.science/w/face-icra/",
+      "embedded_media": [
+        "../media/media1.mp4",
+        "../media/media10.mp4",
+        "../media/media11.mp4",
+        "../media/media12.mp4",
+        "../media/media2.mp4",
+        "../media/media3.mp4",
+        "../media/media4.mp4",
+        "../media/media5.mp4",
+        "../media/media6.mp4",
+        "../media/media7.mp4",
+        "../media/media8.mp4",
+        "../media/media9.mp4"
+      ]
+    }
+  ],
+  "paper": {
+    "path": "static/pdfs/face-paper.pdf",
+    "source": "_2026__ICRA___FACE.pdf",
+    "sha256": "4d9b93c224d5df219b0160842d5afa18745e3247c4a8aebd23d320c1b62a435d",
+    "transform": "Anonymous copy: author and affiliation blocks, project URL, acknowledgement block, external project link and PDF metadata removed with permanent redaction.",
+    "redactions": [
+      {
+        "page": 1,
+        "rectangle": [
+          54,
+          101,
+          558,
+          127
+        ]
+      },
+      {
+        "page": 1,
+        "rectangle": [
+          53,
+          693,
+          300,
+          734
+        ]
+      },
+      {
+        "page": 1,
+        "rectangle": [
+          110.68559265136719,
+          369.9752502441406,
+          298.8006896972656,
+          378.941650390625
+        ]
+      },
+      {
+        "page": 1,
+        "rectangle": [
+          54.0000114440918,
+          379.9382629394531,
+          300,
+          388.9046630859375
+        ]
+      },
+      {
+        "page": 8,
+        "rectangle": [
+          53.999996185302734,
+          483.4490966796875,
+          298.8006896972656,
+          540.318359375
+        ]
+      }
+    ]
+  }
+}

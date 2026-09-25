@@ -1,58 +1,62 @@
 # FACE project page
 
-Website for **Contact-Aware Imitation Learning Through Contact Factorization**.
+**Contact-Aware Imitation Learning Through Contact Factorization**
 
-Live page: https://rcilab.khu.ac.kr/face/
+A static HTML/CSS/JavaScript research project page. No build step or runtime dependencies.
 
-A static HTML/CSS/JavaScript site, with no build step, CDN, analytics, or runtime dependencies. GitHub Pages serves the root of `master`.
+## Content and layout
 
-## Editing
+The page follows the local `../contact-aware-learning.github.io/` reference: an anonymous centered publication header, dark rounded resource links, a six-condition FACE cup teaser with one shared caption, followed by Abstract, the supplied full video, How FACE works, method comparisons, simultaneous generalization clips, and the contact factor estimation figure with one compact detail table, with restrained typography. Paper figure numbers and paper captions are excluded; the cup teaser has one web-specific caption.
 
-- `index.html`: paper text, figures, experiments, and quantitative results.
-- `static/css/face.css`: responsive layout and visual design.
-- `static/js/face.js`: hero preview playback and citation copy.
-- `static/js/experiment-videos.js`: starts research clips when visible and pauses them offscreen. Native controls remain available, and manual pauses survive scrolling.
-- `static/js/method-gifs.js`: pause/play controls for two native GIF illustrations. Per the requested playback behavior, GIFs loop automatically without video autoplay permission or JavaScript; pause switches to a still image. Rebuild with `python scripts/prepare_method_loops.py` (Pillow and imageio-ffmpeg). The FFDP reference figures inspired their visual style; no FFDP friction-cone or denoising claims are attributed to FACE.
-- `MEDIA_TODO.md`: video coverage, source timestamps, and replacement instructions (Korean).
-- `static/pdfs/face-paper.pdf`: the supplied anonymous manuscript.
-- `static/videos/face-final.mp4`: the final video with its original streams, remuxed for progressive playback.
+Research framing and the revision plan are preserved in [REVISION_PLAN.md](REVISION_PLAN.md). The governing distinction is intended task behavior versus its contact-dependent physical realization. Policy parameters remain fixed at deployment; contact factors adapt execution. Policies are trained per task/object category, not one policy spanning all demonstrated tasks.
 
-The first draft retains anonymous authors and `noindex`. Publication metadata and author names should be updated when supplied; no acceptance status or release date is assumed.
+- `index.html`: anonymous project header, research explanation, experiment conditions and method comparisons.
+- `static/css/face.css`: responsive layout.
+- `static/js/face.js`: accessible condition tabs, viewport playback, persistent manual pauses, explicit muted autoplay on load, reload and condition changes.
+- `static/katex/`, `static/js/math.js`: bundled KaTeX 0.16.11 (CSS, JS, woff2 fonts) typesetting the TeX source of `.math` elements; without JavaScript the TeX source stays visible.
+- `scripts/media-manifest.json`: every published media asset's source, hash and conversion details.
+- [MEDIA_TODO.md](MEDIA_TODO.md): Korean source audit and maintenance notes.
 
-## Local preview
+This is an anonymous review page. Do not add author names, affiliations, institutional URLs, contact details or identifying citation metadata. Paper and Code are disabled placeholders; Code includes the GitHub icon. The retained, unlinked PDF is a permanently redacted anonymous derivative; the source manuscript remains unchanged outside this site. No conference acceptance, arXiv link, code release or publication year is inferred. `noindex` remains in place.
 
-```sh
-python -m pip install RangeHTTPServer
-python -m RangeHTTPServer 8000
-```
+## Preview
 
-Open http://localhost:8000/. A range-capable preview server supports seeking in the video before the entire file downloads, as GitHub Pages does. The main content, PDF, video, navigation, and expandable results also work without JavaScript.
-
-## Regenerate supplied media
-
-Optional authoring tools (not required to serve the site):
+From this directory:
 
 ```sh
-python -m pip install pymupdf imageio-ffmpeg
-python scripts/prepare_assets.py --paper "../_2026__ICRA___FACE (2).pdf" --video "../ICRA27_3998_VI_i-2.mp4"
-python scripts/prepare_gallery.py --video "../ICRA27_3998_VI_i-2.mp4"
+python3 -m pip install RangeHTTPServer
+python3 -m RangeHTTPServer 8000 --bind 127.0.0.1
 ```
 
-The extraction scripts record paper crop coordinates and video timestamps without modifying the source files. The full video is stream-copied; short clips are re-encoded. `scripts/gallery-manifest.json` records each gallery clip's source interval, crop, and outcome hold. Condition crops show separate views of existing footage and do not represent additional trials.
+Open http://localhost:8000/. Range requests allow video seeking. Basic HTML viewing also works without a server.
+
+## Rebuild media
+
+Only these supplied files are used:
+
+- `../materials/_2026__ICRA___FACE.pdf`
+- `../materials/FACE (2).pptx`
+- `../materials/ICRA27_3998_VI_i-2.mp4`
+
+```sh
+python3 -m pip install pymupdf Pillow imageio-ffmpeg
+python3 scripts/prepare_assets.py
+```
+
+The script extracts 34 selected embedded videos from the PPTX, converts them to H.264 for browser compatibility, and creates posters. Source framing, full duration and existing speed labels are retained; no crop, speed change, outcome overlay, or extra end-frame hold is introduced. All 35 website videos contain no audio track; both preparation scripts explicitly discard audio. The full MP4 preserves its video stream without re-encoding, and appears after Abstract with manual playback. `scripts/anonymize_paper.py` creates the anonymous PDF by permanently removing the author/affiliation blocks, project URL, acknowledgements and PDF metadata. Rebuilding assets retains this anonymization.
+
+The PPTX contains 48 embedded videos across 12 slide XML files. Repeated overview footage and the wet-cup clip inside method slides are not all duplicated on the page. The manifest lists all slides for traceability. Videos are not counted as independent evaluation trials.
 
 ## Verification
 
 ```sh
-python -m pip install playwright RangeHTTPServer
-python scripts/check_site.py
+python3 -m pip install playwright RangeHTTPServer pymupdf
+python3 -m playwright install chromium
+python3 scripts/check_site.py --screenshots /tmp/face-check
 ```
 
-The browser check uses an installed Microsoft Edge. It checks relative assets and anchors, responsive overflow at 1440/768/390/320 px, all 18 research clips and their durations, video playback and seeking, viewport playback with persistent manual pauses, reduced motion for the hero, GIF animation and pause/resume, citation copy, and a JavaScript-disabled fallback. Screenshots are saved outside the repository in `../working/`.
+The check launches its own local server. It validates local links and original-source hashes; all 35 video durations, decoding, playback and seeking; layouts at 1440, 960, 768, 390 and 320 px; every comparison tab and keyboard navigation; reload autoplay and manual pauses; anonymous HTML/PDF metadata and the requested section order and simultaneous generalization display; and no-JavaScript access to all conditions. Screenshots are written outside the site.
 
-## Reference and attribution
+## Attribution
 
-The information flow was inspired by [CAMP-MPPI](https://rcilab.khu.ac.kr/CAMP-MPPI/) ([source](https://github.com/RCILab/CAMP-MPPI), reference revision `3173bb5`). A separate reference checkout is kept alongside this repository in `../reference-camp-mppi/`.
-
-The original repository was generated from the [RCI paper page template](https://github.com/RCILab/RCI_paper_page_template), based on the [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template) and [Nerfies](https://nerfies.github.io/). The draft replaces the sample content and front-end assets with a FACE-specific page.
-
-Website license: [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/), retained from the original template. This website notice does not assign a new license to the research manuscript or video.
+Layout reference: the local `contact-aware-learning.github.io` checkout, currently containing the [Nerfies](https://nerfies.github.io/) template. Original project-template attribution to the [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template) is retained. Website license: [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Formula typesetting: [KaTeX](https://katex.org/) 0.16.11, MIT license (`static/katex/LICENSE`). This notice does not assign a new license to the manuscript or experimental media.
