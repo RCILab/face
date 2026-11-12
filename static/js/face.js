@@ -1,5 +1,3 @@
-/* Progressive enhancement: the complete paper, media and comparisons work
-   without JavaScript. Clips keep native controls and original timing. */
 (() => {
   'use strict';
   const states = new Map([...document.querySelectorAll('video.research-clip')].map(video =>
@@ -17,7 +15,7 @@
     state.video.muted = true;
     state.video.defaultMuted = true;
     state.video.autoplay = true;
-    state.video.play().catch(() => { /* Retry on readiness, page activation or user interaction. */ });
+    state.video.play().catch(() => {});
   }
   function refresh(state) {
     const rect = state.video.getBoundingClientRect();
@@ -90,7 +88,6 @@
   window.addEventListener('pageshow', refreshAll);
   window.addEventListener('load', refreshAll);
   window.addEventListener('resize', refreshAll);
-  // Browser autoplay restrictions may lift after an actual user interaction.
   document.addEventListener('pointerup', refreshAll, { passive: true });
   document.addEventListener('keydown', refreshAll);
   if (!('IntersectionObserver' in window)) {

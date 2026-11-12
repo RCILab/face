@@ -134,7 +134,6 @@ footer p { margin-bottom: 5px; }
   .teaser-grid .media-item:first-child { grid-column: 1 / -1; }
   .teaser-grid h4 { font-size: 13px; min-height: auto; }
 }
-/* Anonymous, compact publication page. */
 .publication-header { padding-top: 52px; padding-bottom: 24px; }
 .pill { border: 0; }
 .pill:disabled { opacity: .55; cursor: default; }
@@ -171,7 +170,6 @@ footer p { margin-bottom: 5px; }
   .condition-comparison h3 { grid-column: 1 / -1; min-height: auto; margin: 0; }
   .condition-comparison .media-item + .media-item { margin-top: 0; }
 }
-/* One method label per row; conditions share a common column header. */
 .generalization-matrix { display: grid; grid-template-columns: 125px repeat(4, minmax(0, 1fr)); gap: 20px 16px; align-items: center; }
 .generalization-matrix .method-heading { grid-column: 1; grid-row: calc(var(--method) + 1); font-size: 14px; line-height: 1.5; letter-spacing: 0; margin: 0; }
 .generalization-matrix .ours-label { color: #226b50; }
@@ -185,7 +183,6 @@ footer p { margin-bottom: 5px; }
   .generalization-matrix .media-item { grid-column: var(--method); grid-row: calc(var(--condition) * 2 + 1); }
 }
 
-/* Keep the six cup clips in two rows; color identifies the contact shift. */
 .cup-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 22px; margin-bottom: 12px; font-size: 13px; }
 .cup-legend > span { display: inline-flex; align-items: center; gap: 7px; }
 .cup-legend i { display: inline-block; width: 14px; height: 14px; border: 1px solid #0002; border-radius: 3px; }
@@ -203,13 +200,11 @@ footer p { margin-bottom: 5px; }
   .cup-condition-grid h4 { font-size: 10px; min-height: 27px; margin-bottom: 5px; }
 }
 
-/* Show the benefit as the result of contact factorization. */
 .framing-caption { display: flex; flex-direction: column; align-items: center; gap: 0; font-weight: 400; }
 .framing-principle { max-width: 820px; }
 .framing-connector { width: 40px; height: 36px; margin: 10px 0; flex: none; fill: #4b6479; }
 .framing-outcome { font-weight: 400; }
 
-/* Compact tables for the contact factor estimation details: surface heights, then estimators. */
 .estimation-details { margin: 6px 0 0; }
 .estimation-table { text-align: left; border-top: 2px solid #666; border-bottom: 2px solid #666; }
 .estimation-table th:first-child { width: 26%; }
@@ -240,7 +235,6 @@ footer p { margin-bottom: 5px; }
 .key-results { padding-bottom: 28px; }
 .pill-note { opacity: .8; font-size: .9em; }
 .pill svg.arxiv-icon { fill: currentColor; stroke: none; }
-/* Light outline buttons, matching the neutral page palette */
 .pill { background: #fff; color: var(--ink); border: 1px solid #d1d1d1; box-shadow: 0 1px 2px #0000000d; transition: border-color .15s, color .15s, background .15s; }
 .pill:hover { background: #f7f9fb; border-color: #4b6479; color: #4b6479; text-decoration: none; }
 .pill:disabled { opacity: 1; color: #8a8a8a; background: #fafafa; border-color: #e3e3e3; box-shadow: none; }
