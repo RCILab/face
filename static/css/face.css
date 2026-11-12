@@ -225,3 +225,24 @@ footer p { margin-bottom: 5px; }
   .estimation-table th:first-child { width: 28%; }
   .estimation-table th, .estimation-table td { padding: 8px 6px; }
 }
+.publication-authors { margin: -4px auto 28px; max-width: 900px; }
+.publication-authors p { margin: 0; display: flex; flex-wrap: wrap; justify-content: center; }
+.author-list { gap: 4px 30px; font-size: 20px; line-height: 1.5; color: #303030; }
+.affiliation-list { gap: 2px 26px; margin-top: 8px !important; font-size: 16px; line-height: 1.5; color: #555; }
+.author, .affiliation-list span { white-space: nowrap; }
+.publication-authors sup { margin-left: 1px; }
+.affiliation-list sup { margin: 0 1px 0 0; }
+@media (max-width: 480px) {
+  .author-list { gap: 2px 18px; font-size: 17px; }
+  .affiliation-list { gap: 2px 16px; font-size: 14px; }
+}
+#main-video { aspect-ratio: 16 / 9; max-width: 1100px; margin: 0 auto; }
+.key-results { padding-bottom: 28px; }
+.pill-note { opacity: .8; font-size: .9em; }
+.pill svg.arxiv-icon { fill: currentColor; stroke: none; }
+/* Light outline buttons, matching the neutral page palette */
+.pill { background: #fff; color: var(--ink); border: 1px solid #d1d1d1; box-shadow: 0 1px 2px #0000000d; transition: border-color .15s, color .15s, background .15s; }
+.pill:hover { background: #f7f9fb; border-color: #4b6479; color: #4b6479; text-decoration: none; }
+.pill:disabled { opacity: 1; color: #8a8a8a; background: #fafafa; border-color: #e3e3e3; box-shadow: none; }
+.pill:disabled:hover { background: #fafafa; border-color: #e3e3e3; color: #8a8a8a; }
+.pill-note { opacity: 1; }
